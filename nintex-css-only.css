@@ -1,6 +1,6 @@
 /* =====================================================
-   NINTEX FORMS - IMPROVED CSS STYLING
-   Fixed sizing, removed header/footer, consistent layout
+   NINTEX EXPENSE CLAIM FORM - FINAL OPTIMIZED CSS
+   Based on actual form structure
    All styles scoped under .theme-entry
    ===================================================== */
 
@@ -19,14 +19,55 @@
     --main-font: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
     --border-radius: 4px;
     --input-height: 38px;
-    --transition-speed: 0.2s;
 }
 
 /* ===== FORM CONTAINER ===== */
 .theme-entry .form {
     font-family: var(--main-font) !important;
     background-color: var(--white) !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+/* ===== PANEL/SECTION HEADERS ===== */
+.theme-entry .grid-header-wrapper,
+.theme-entry .panel-header-wrapper {
+    margin-bottom: 0 !important;
+}
+
+.theme-entry .grid-header-wrapper .grid-header-text,
+.theme-entry .panel-header-wrapper .panel-header-text {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%) !important;
+    padding: 14px 20px !important;
+    border-radius: 0 !important;
+    min-height: 50px !important;
+    height: auto !important;
+    line-height: 1.4 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.theme-entry .grid-header-wrapper .grid-header-text,
+.theme-entry .panel-header-wrapper .panel-header-text,
+.theme-entry .grid-header-wrapper .grid-header-text > span,
+.theme-entry .panel-header-wrapper .panel-header-text > span {
+    color: var(--white) !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    font-family: var(--main-font) !important;
+    white-space: normal !important;
+    overflow: visible !important;
+    text-overflow: clip !important;
+    line-height: 1.4 !important;
+    text-align: center !important;
+}
+
+/* Panel body - content area below headers */
+.theme-entry .grid-body,
+.theme-entry .panel-body {
     padding: 20px !important;
+    background-color: var(--white) !important;
 }
 
 /* ===== LABELS ===== */
@@ -37,8 +78,10 @@
     color: var(--text-color) !important;
     font-size: 13px !important;
     margin-bottom: 6px !important;
+    margin-top: 0 !important;
     font-family: var(--main-font) !important;
     line-height: 1.4 !important;
+    padding: 0 !important;
 }
 
 /* Required field indicator */
@@ -49,7 +92,25 @@
     font-weight: bold !important;
 }
 
-/* ===== TEXT INPUTS - CONSISTENT SIZING ===== */
+/* ===== FIELD CONTAINERS - FIX OVERLAPPING ===== */
+.theme-entry .nf-filler-control-wrapper,
+.theme-entry .nf-control-wrapper,
+.theme-entry div[class*="control-wrapper"] {
+    margin-bottom: 16px !important;
+    padding: 0 !important;
+    position: relative !important;
+    clear: both !important;
+}
+
+/* Row containers */
+.theme-entry .row,
+.theme-entry .nf-row {
+    display: block !important;
+    clear: both !important;
+    margin-bottom: 12px !important;
+}
+
+/* ===== TEXT INPUTS ===== */
 .theme-entry input[type="text"],
 .theme-entry input[type="password"],
 .theme-entry input[type="email"],
@@ -67,9 +128,11 @@
     font-family: var(--main-font) !important;
     color: var(--text-color) !important;
     background-color: var(--white) !important;
-    transition: border-color var(--transition-speed) ease !important;
+    transition: border-color 0.2s ease !important;
     box-sizing: border-box !important;
     line-height: normal !important;
+    margin: 0 !important;
+    display: block !important;
 }
 
 /* Watermark/placeholder */
@@ -77,7 +140,6 @@
 .theme-entry .input-control-watermark {
     height: var(--input-height) !important;
     padding: 8px 12px !important;
-    border: 1px solid var(--border-color) !important;
     color: var(--text-light) !important;
 }
 
@@ -91,10 +153,10 @@
 .theme-entry .input-control:focus {
     outline: none !important;
     border-color: var(--primary-color) !important;
-    box-shadow: 0 0 0 2px rgba(102, 126, 234, 0.1) !important;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1) !important;
 }
 
-/* ===== TEXTAREA - BETTER SIZING ===== */
+/* ===== TEXTAREA ===== */
 .theme-entry textarea {
     width: 100% !important;
     min-height: 80px !important;
@@ -109,15 +171,17 @@
     resize: vertical !important;
     line-height: 1.5 !important;
     box-sizing: border-box !important;
+    display: block !important;
+    margin: 0 !important;
 }
 
 .theme-entry textarea:focus {
     outline: none !important;
     border-color: var(--primary-color) !important;
-    box-shadow: 0 0 0 2px rgba(102, 126, 234, 0.1) !important;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1) !important;
 }
 
-/* ===== SELECT DROPDOWNS - CONSISTENT HEIGHT ===== */
+/* ===== SELECT DROPDOWNS ===== */
 .theme-entry select,
 .theme-entry .input-control.select-box,
 .theme-entry div.input-control.select-box {
@@ -131,6 +195,8 @@
     background-color: var(--white) !important;
     cursor: pointer !important;
     box-sizing: border-box !important;
+    display: block !important;
+    margin: 0 !important;
 }
 
 .theme-entry .input-control.select-box .input-control-m-c {
@@ -146,7 +212,6 @@
 }
 
 /* Remove internal borders */
-.theme-entry .input-control.select-box .input-control-m-c,
 html[dir=ltr] .theme-entry .input-control.select-box .input-control-m-c {
     border-left-width: 0 !important;
     border-right-width: 0 !important;
@@ -154,23 +219,26 @@ html[dir=ltr] .theme-entry .input-control.select-box .input-control-m-c {
     border-bottom-width: 0 !important;
 }
 
-/* ===== DATE PICKER - CONSISTENT HEIGHT ===== */
+/* ===== DATE PICKER ===== */
 .theme-entry div.input-control.datepicker {
     height: var(--input-height) !important;
     border: 1px solid var(--border-color) !important;
     border-radius: var(--border-radius) !important;
     box-sizing: border-box !important;
     background-color: var(--white) !important;
+    display: block !important;
+    margin: 0 !important;
 }
 
 .theme-entry div.input-control.datepicker input {
     height: var(--input-height) !important;
     padding: 8px 12px !important;
+    border: none !important;
 }
 
 .theme-entry div.input-control.datepicker:focus-within {
     border-color: var(--primary-color) !important;
-    box-shadow: 0 0 0 2px rgba(102, 126, 234, 0.1) !important;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1) !important;
 }
 
 /* ===== CHECKBOXES & RADIO ===== */
@@ -183,24 +251,25 @@ html[dir=ltr] .theme-entry .input-control.select-box .input-control-m-c {
     vertical-align: middle !important;
 }
 
-/* ===== BUTTONS - BETTER SIZING ===== */
+/* ===== BUTTONS ===== */
 .theme-entry button,
 .theme-entry input[type="submit"],
 .theme-entry input[type="button"] {
-    height: var(--input-height) !important;
-    padding: 8px 20px !important;
+    height: auto !important;
+    padding: 10px 24px !important;
     border: none !important;
     border-radius: var(--border-radius) !important;
     font-size: 14px !important;
     font-weight: 600 !important;
     cursor: pointer !important;
-    transition: all var(--transition-speed) ease !important;
+    transition: all 0.2s ease !important;
     margin-right: 8px !important;
     margin-top: 4px !important;
     line-height: normal !important;
+    display: inline-block !important;
 }
 
-/* Primary button */
+/* Primary button (Submit) */
 .theme-entry button[type="submit"],
 .theme-entry input[type="submit"] {
     background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%) !important;
@@ -210,10 +279,11 @@ html[dir=ltr] .theme-entry .input-control.select-box .input-control-m-c {
 .theme-entry button[type="submit"]:hover,
 .theme-entry input[type="submit"]:hover {
     background: linear-gradient(135deg, var(--primary-dark) 0%, #6a3f8f 100%) !important;
-    box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3) !important;
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3) !important;
+    transform: translateY(-1px) !important;
 }
 
-/* Secondary button */
+/* Secondary button (Cancel) */
 .theme-entry button[type="button"],
 .theme-entry input[type="button"] {
     background-color: #95a5a6 !important;
@@ -224,137 +294,48 @@ html[dir=ltr] .theme-entry .input-control.select-box .input-control-m-c {
     background-color: #7f8c8d !important;
 }
 
-/* ===== PANELS & HEADERS - FIXED HEIGHT ===== */
-.theme-entry .grid-header-wrapper .grid-header-text,
-.theme-entry .panel-header-wrapper .panel-header-text {
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%) !important;
-    padding: 12px 16px !important;
-    border-radius: var(--border-radius) var(--border-radius) 0 0 !important;
-    min-height: auto !important;
-    height: auto !important;
-    line-height: 1.4 !important;
-}
-
-.theme-entry .grid-header-wrapper .grid-header-text,
-.theme-entry .panel-header-wrapper .panel-header-text,
-.theme-entry .grid-header-wrapper .grid-header-text > span,
-.theme-entry .panel-header-wrapper .panel-header-text > span {
-    color: var(--white) !important;
-    font-size: 15px !important;
-    font-weight: 600 !important;
-    font-family: var(--main-font) !important;
-    white-space: normal !important;
-    overflow: visible !important;
-    text-overflow: clip !important;
-    line-height: 1.4 !important;
-}
-
-/* ===== TABS - BETTER SPACING ===== */
-.theme-entry .tab-box .tab-box-body {
-    background-color: transparent !important;
-    margin-top: 20px !important;
-    padding: 15px !important;
-}
-
-.theme-entry .tab-box.tabs-top ul.tab-box-tabs {
-    border-bottom: 2px solid var(--border-color) !important;
-    margin-bottom: 15px !important;
-    height: auto !important;
-}
-
-.theme-entry .tab-box ul.tab-box-tabs li a.tab {
-    padding: 10px 16px !important;
-    cursor: pointer !important;
-    height: auto !important;
-}
-
-.theme-entry .tab-box ul.tab-box-tabs a.tab.selected {
-    border-bottom: 3px solid var(--primary-color) !important;
-}
-
-.theme-entry .tab-box ul.tab-box-tabs a.tab .tab-text {
-    color: var(--text-light) !important;
-    font-weight: 600 !important;
-    font-size: 13px !important;
-}
-
-.theme-entry .tab-box ul.tab-box-tabs a.tab.selected .tab-text {
-    color: var(--primary-color) !important;
-}
-
-/* Tab step indicators */
-.theme-entry .tab-box ul.tab-box-tabs {
-    counter-reset: tab-count !important;
-}
-
-.theme-entry .tab-box ul.tab-box-tabs li {
-    counter-increment: li-count !important;
-    position: relative !important;
-}
-
-.theme-entry .tab-box ul.tab-box-tabs li:before {
-    background-color: var(--border-color) !important;
-    content: "" !important;
-    display: block !important;
-    height: 2px !important;
-    left: 50% !important;
-    position: absolute !important;
-    top: 18px !important;
-    width: 100% !important;
-    z-index: 0 !important;
-}
-
-.theme-entry .tab-box ul.tab-box-tabs li:last-child:before {
-    display: none !important;
-}
-
-.theme-entry .tab-box ul.tab-box-tabs a.tab:before {
-    content: counter(li-count) !important;
-    display: inline-block !important;
-    width: 32px !important;
-    height: 32px !important;
-    line-height: 32px !important;
+/* Button container at bottom */
+.theme-entry .nf-form-buttons,
+.theme-entry .form-buttons {
+    padding: 20px !important;
     text-align: center !important;
-    color: var(--text-color) !important;
-    font-weight: 600 !important;
-    font-size: 14px !important;
-    border-radius: 50% !important;
+    border-top: 1px solid var(--border-color) !important;
     background-color: var(--background-light) !important;
-    border: 2px solid var(--border-color) !important;
-    margin-bottom: 6px !important;
-    position: relative !important;
-    z-index: 1 !important;
+    margin-top: 20px !important;
 }
 
-.theme-entry .tab-box ul.tab-box-tabs a.tab.selected:before {
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%) !important;
-    border-color: var(--primary-color) !important;
-    color: var(--white) !important;
+/* ===== REPEATING SECTION / LIST VIEW ===== */
+.theme-entry .nf-repeater,
+.theme-entry .list-view-container {
+    margin: 20px 0 !important;
 }
 
-/* ===== TABLES - CONSISTENT SIZING ===== */
+/* Repeater table */
 .theme-entry table {
     width: 100% !important;
     border-collapse: collapse !important;
-    margin: 15px 0 !important;
+    margin: 0 !important;
+    background-color: var(--white) !important;
 }
 
 .theme-entry table th {
     background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%) !important;
     color: var(--white) !important;
-    padding: 10px 12px !important;
+    padding: 12px 10px !important;
     text-align: left !important;
     font-weight: 600 !important;
     font-size: 13px !important;
     line-height: 1.4 !important;
-    white-space: normal !important;
+    white-space: nowrap !important;
+    border: 1px solid rgba(255,255,255,0.2) !important;
 }
 
 .theme-entry table td {
-    padding: 8px 12px !important;
-    border-bottom: 1px solid var(--border-color) !important;
+    padding: 8px 10px !important;
+    border: 1px solid var(--border-color) !important;
     font-size: 13px !important;
     vertical-align: middle !important;
+    background-color: var(--white) !important;
 }
 
 .theme-entry table tbody tr:hover {
@@ -365,13 +346,89 @@ html[dir=ltr] .theme-entry .input-control.select-box .input-control-m-c {
     background-color: var(--background-light) !important;
 }
 
-/* Table inputs - match form inputs */
+/* Table inputs - smaller */
 .theme-entry table input[type="text"],
 .theme-entry table input[type="number"],
 .theme-entry table select {
     height: 32px !important;
     padding: 4px 8px !important;
     font-size: 13px !important;
+    width: 100% !important;
+}
+
+/* Table date picker */
+.theme-entry table .input-control.datepicker {
+    height: 32px !important;
+}
+
+/* Repeater buttons (Add, Edit, Delete) */
+.theme-entry .list-view-toolbar button,
+.theme-entry .repeater-toolbar button {
+    height: auto !important;
+    padding: 6px 12px !important;
+    font-size: 13px !important;
+    margin: 4px !important;
+}
+
+/* Add button */
+.theme-entry button[title*="Add"],
+.theme-entry a[title*="Add"] {
+    background-color: var(--success-color) !important;
+    color: var(--white) !important;
+}
+
+/* Delete button */
+.theme-entry button[title*="Delete"],
+.theme-entry a[title*="Delete"] {
+    background-color: var(--error-color) !important;
+    color: var(--white) !important;
+}
+
+/* Edit button */
+.theme-entry button[title*="Edit"],
+.theme-entry a[title*="Edit"] {
+    background-color: #3498db !important;
+    color: var(--white) !important;
+}
+
+/* ===== FILTER/SEARCH SECTION ===== */
+.theme-entry .list-view-filters,
+.theme-entry .filter-section {
+    padding: 12px !important;
+    background-color: var(--background-light) !important;
+    border-bottom: 1px solid var(--border-color) !important;
+    margin-bottom: 0 !important;
+}
+
+/* ===== SUM ROW ===== */
+.theme-entry .sum-row,
+.theme-entry tr[class*="sum"],
+.theme-entry tr[class*="total"] {
+    background-color: var(--background-light) !important;
+    font-weight: 600 !important;
+    border-top: 2px solid var(--primary-color) !important;
+}
+
+/* ===== TEXT ELEMENTS ===== */
+.theme-entry div,
+.theme-entry span,
+.theme-entry p {
+    color: var(--text-color) !important;
+    font-family: var(--main-font) !important;
+    font-size: 13px !important;
+    line-height: 1.5 !important;
+}
+
+/* Static text fields (like Employee Name value) */
+.theme-entry .static-text,
+.theme-entry .display-only {
+    padding: 8px 12px !important;
+    background-color: var(--background-light) !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: var(--border-radius) !important;
+    min-height: var(--input-height) !important;
+    display: flex !important;
+    align-items: center !important;
 }
 
 /* ===== VALIDATION ===== */
@@ -388,46 +445,7 @@ html[dir=ltr] .theme-entry .input-control.select-box .input-control-m-c {
     margin-top: 4px !important;
 }
 
-/* ===== TEXT ELEMENTS ===== */
-.theme-entry div,
-.theme-entry span,
-.theme-entry p {
-    color: var(--text-color) !important;
-    font-family: var(--main-font) !important;
-    font-size: 13px !important;
-    line-height: 1.5 !important;
-}
-
-/* ===== HEADINGS ===== */
-.theme-entry h1,
-.theme-entry h2,
-.theme-entry h3 {
-    color: var(--text-color) !important;
-    font-family: var(--main-font) !important;
-    font-weight: 600 !important;
-    line-height: 1.3 !important;
-    margin: 15px 0 10px 0 !important;
-}
-
-.theme-entry h1 { font-size: 22px !important; }
-.theme-entry h2 { font-size: 18px !important; }
-.theme-entry h3 { font-size: 16px !important; }
-
-/* ===== HYPERLINKS ===== */
-.theme-entry a.Hyperlink,
-.theme-entry a.Hyperlink-NotSet {
-    color: var(--primary-color) !important;
-    text-decoration: none !important;
-    font-size: 13px !important;
-}
-
-.theme-entry a.Hyperlink:hover,
-.theme-entry a.Hyperlink-NotSet:hover {
-    color: var(--primary-dark) !important;
-    text-decoration: underline !important;
-}
-
-/* ===== DISABLED FIELDS ===== */
+/* ===== DISABLED/READONLY ===== */
 .theme-entry input:disabled,
 .theme-entry textarea:disabled,
 .theme-entry select:disabled {
@@ -436,24 +454,27 @@ html[dir=ltr] .theme-entry .input-control.select-box .input-control-m-c {
     opacity: 0.7 !important;
 }
 
-/* ===== READONLY FIELDS ===== */
 .theme-entry input[readonly],
 .theme-entry textarea[readonly] {
-    background-color: #fafafa !important;
+    background-color: var(--background-light) !important;
     cursor: default !important;
 }
 
-/* ===== ATTACHMENTS ===== */
-.theme-entry .nf-attachment-control {
-    border: 2px dashed var(--border-color) !important;
-    padding: 16px !important;
-    border-radius: var(--border-radius) !important;
-    background-color: var(--background-light) !important;
+/* ===== HYPERLINKS ===== */
+.theme-entry a {
+    color: var(--primary-color) !important;
+    text-decoration: none !important;
+}
+
+.theme-entry a:hover {
+    color: var(--primary-dark) !important;
+    text-decoration: underline !important;
 }
 
 /* ===== RESPONSIVE ===== */
 @media screen and (max-width: 768px) {
-    .theme-entry .form {
+    .theme-entry .grid-body,
+    .theme-entry .panel-body {
         padding: 15px !important;
     }
 
@@ -461,18 +482,13 @@ html[dir=ltr] .theme-entry .input-control.select-box .input-control-m-c {
     .theme-entry input[type="submit"],
     .theme-entry input[type="button"] {
         width: 100% !important;
-        margin-right: 0 !important;
         margin-bottom: 8px !important;
     }
 
     .theme-entry table {
         font-size: 12px !important;
-    }
-    
-    .theme-entry input[type="text"],
-    .theme-entry textarea,
-    .theme-entry select {
-        font-size: 16px !important; /* Prevents zoom on iOS */
+        display: block !important;
+        overflow-x: auto !important;
     }
 }
 
@@ -502,10 +518,16 @@ html[dir=ltr] .theme-entry .input-control.select-box .input-control-m-c {
     box-sizing: border-box !important;
 }
 
-/* Remove any header/footer elements that might exist */
-.theme-entry .nf-form-header,
-.theme-entry .nf-form-footer,
-.theme-entry .form-header,
-.theme-entry .form-footer {
-    display: none !important;
+/* Clear floats */
+.theme-entry::after,
+.theme-entry .row::after,
+.theme-entry .nf-row::after {
+    content: "" !important;
+    display: table !important;
+    clear: both !important;
+}
+
+/* Fix any absolute positioning issues */
+.theme-entry .nf-control-wrapper {
+    position: relative !important;
 }
