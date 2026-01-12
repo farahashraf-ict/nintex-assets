@@ -1,0 +1,705 @@
+/* ================================================
+   NINTEX FORMS - COMPLETE STYLING WITH HEADER & FOOTER
+   Includes .theme-entry structure support
+   ================================================ */
+
+/* ===== FORM HEADER ===== */
+.nf-form-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #ffffff;
+    padding: 30px 40px;
+    margin: -30px -40px 30px -40px;
+    border-radius: 8px 8px 0 0;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.nf-form-header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.nf-form-header-left {
+    flex: 1;
+}
+
+.nf-form-header-title {
+    font-size: 32px;
+    font-weight: 700;
+    margin: 0 0 10px 0;
+    color: #ffffff;
+}
+
+.nf-form-header-subtitle {
+    font-size: 16px;
+    opacity: 0.9;
+    margin: 0;
+    font-weight: 400;
+}
+
+.nf-form-header-right {
+    text-align: right;
+}
+
+.nf-form-header-logo {
+    max-height: 60px;
+    max-width: 200px;
+}
+
+.nf-form-header-info {
+    display: flex;
+    gap: 30px;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(255,255,255,0.3);
+}
+
+.nf-form-header-info-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.nf-form-header-info-label {
+    font-size: 12px;
+    opacity: 0.8;
+    margin-bottom: 3px;
+}
+
+.nf-form-header-info-value {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* ===== FORM FOOTER ===== */
+.nf-form-footer {
+    background-color: #34495e;
+    color: #ecf0f1;
+    padding: 25px 40px;
+    margin: 30px -40px -30px -40px;
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 -4px 6px rgba(0,0,0,0.1);
+}
+
+.nf-form-footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.nf-form-footer-left {
+    flex: 1;
+}
+
+.nf-form-footer-text {
+    margin: 0 0 5px 0;
+    font-size: 14px;
+}
+
+.nf-form-footer-subtext {
+    margin: 0;
+    font-size: 12px;
+    opacity: 0.8;
+}
+
+.nf-form-footer-right {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.nf-form-footer-link {
+    color: #3498db;
+    text-decoration: none;
+    font-size: 13px;
+    transition: color 0.3s ease;
+}
+
+.nf-form-footer-link:hover {
+    color: #5dade2;
+    text-decoration: underline;
+}
+
+.nf-form-footer-divider {
+    height: 20px;
+    width: 1px;
+    background-color: rgba(255,255,255,0.3);
+}
+
+/* ===== NINTEX FORM CONTAINER ===== */
+.nf-form-cont {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #ffffff;
+    padding: 30px 40px;
+    max-width: 1200px;
+    margin: 20px auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+}
+
+/* ===== THEME ENTRY (Main Field Container) ===== */
+.theme-entry {
+    margin-bottom: 20px;
+    padding: 10px 0;
+    position: relative;
+}
+
+/* Field labels within theme-entry */
+.theme-entry label,
+.theme-entry .nf-filler-control-wrapper > label {
+    display: block;
+    font-weight: 600;
+    color: #34495e;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+/* Required field indicator */
+.theme-entry .nf-associated-control.nf-required > label:after,
+.theme-entry label.nf-required:after {
+    content: " *";
+    color: #e74c3c;
+    font-weight: bold;
+    margin-left: 3px;
+}
+
+/* ===== INPUT FIELDS WITHIN THEME-ENTRY ===== */
+.theme-entry input[type="text"],
+.theme-entry input[type="number"],
+.theme-entry input[type="date"],
+.theme-entry input[type="datetime-local"],
+.theme-entry input[type="email"],
+.theme-entry input[type="tel"],
+.theme-entry input[type="url"],
+.theme-entry input[type="password"],
+.theme-entry textarea,
+.theme-entry select,
+.theme-entry .nf-input,
+.nf-input-text input,
+.nf-input-number input {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #dce4ec;
+    border-radius: 4px;
+    font-size: 14px;
+    font-family: inherit;
+    background-color: #ffffff;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+/* Focus state */
+.theme-entry input[type="text"]:focus,
+.theme-entry input[type="number"]:focus,
+.theme-entry input[type="date"]:focus,
+.theme-entry input[type="datetime-local"]:focus,
+.theme-entry input[type="email"]:focus,
+.theme-entry input[type="tel"]:focus,
+.theme-entry input[type="url"]:focus,
+.theme-entry input[type="password"]:focus,
+.theme-entry textarea:focus,
+.theme-entry select:focus,
+.theme-entry .nf-input:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    background-color: #f8fcff;
+}
+
+/* ===== TEXTAREA ===== */
+.theme-entry textarea,
+.nf-input-textarea textarea {
+    min-height: 80px;
+    resize: vertical;
+}
+
+/* ===== SELECT DROPDOWNS ===== */
+.theme-entry select,
+.nf-input-dropdown select {
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23333' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    padding-right: 35px;
+}
+
+/* ===== CHOICE FIELDS (Radio/Checkbox) ===== */
+.theme-entry input[type="checkbox"],
+.theme-entry input[type="radio"],
+.nf-input-checkbox input,
+.nf-input-radiobutton input {
+    width: auto;
+    margin-right: 8px;
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.theme-entry .nf-choice-label {
+    display: inline-block;
+    cursor: pointer;
+    font-weight: normal;
+    margin-right: 15px;
+}
+
+/* ===== PEOPLE PICKER ===== */
+.theme-entry .nf-people-picker-container input,
+.nf-people-picker input {
+    width: 100%;
+}
+
+.nf-people-picker-personas {
+    margin-top: 8px;
+}
+
+.nf-people-picker-persona {
+    background-color: #ecf0f1;
+    padding: 6px 12px;
+    border-radius: 16px;
+    display: inline-block;
+    margin: 4px;
+    font-size: 13px;
+}
+
+/* ===== DATE PICKER ===== */
+.theme-entry .nf-date-picker input,
+.nf-input-datetime input {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23333' stroke-width='2'%3E%3Crect x='3' y='4' width='18' height='18' rx='2' ry='2'%3E%3C/rect%3E%3Cline x1='16' y1='2' x2='16' y2='6'%3E%3C/line%3E%3Cline x1='8' y1='2' x2='8' y2='6'%3E%3C/line%3E%3Cline x1='3' y1='10' x2='21' y2='10'%3E%3C/line%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    padding-right: 40px;
+}
+
+/* ===== BUTTONS ===== */
+.nf-form-buttons,
+.nf-button-container {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #e8e8e8;
+}
+
+.nf-form-buttons button,
+.nf-form-buttons input[type="submit"],
+.nf-form-buttons input[type="button"],
+.nf-submit,
+.nf-save,
+.nf-cancel {
+    padding: 12px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    font-family: inherit;
+}
+
+/* Submit button (primary) */
+.nf-form-buttons button[type="submit"],
+.nf-form-buttons input[type="submit"],
+.nf-submit,
+button.nf-button-submit {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #ffffff;
+}
+
+.nf-form-buttons button[type="submit"]:hover,
+.nf-form-buttons input[type="submit"]:hover,
+.nf-submit:hover {
+    background: linear-gradient(135deg, #5568d3 0%, #6a3f8f 100%);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+    transform: translateY(-2px);
+}
+
+/* Save/Cancel buttons (secondary) */
+.nf-save,
+.nf-cancel,
+button.nf-button-save,
+button.nf-button-cancel {
+    background-color: #95a5a6;
+    color: #ffffff;
+}
+
+.nf-save:hover,
+.nf-cancel:hover {
+    background-color: #7f8c8d;
+    box-shadow: 0 4px 8px rgba(149, 165, 166, 0.3);
+}
+
+/* Disabled state */
+.nf-form-buttons button:disabled,
+.nf-submit:disabled {
+    background-color: #bdc3c7;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+/* ===== VALIDATION & ERRORS ===== */
+.theme-entry.nf-error input,
+.theme-entry.nf-error textarea,
+.theme-entry.nf-error select,
+.nf-validation-error-message {
+    border-color: #e74c3c;
+}
+
+.theme-entry.nf-error input,
+.theme-entry.nf-error textarea,
+.theme-entry.nf-error select {
+    background-color: #fff5f5;
+}
+
+.nf-validation-message,
+.nf-error-msg {
+    color: #e74c3c;
+    font-size: 13px;
+    margin-top: 5px;
+    display: block;
+    font-weight: 500;
+}
+
+/* ===== REPEATING SECTIONS / TABLES ===== */
+.nf-repeater-table,
+table.nf-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background: #ffffff;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.nf-repeater-table th,
+table.nf-table th {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #ffffff;
+    padding: 12px 15px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.nf-repeater-table td,
+table.nf-table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #ecf0f1;
+    font-size: 14px;
+}
+
+.nf-repeater-table tr:hover,
+table.nf-table tr:hover {
+    background-color: #f8f9fa;
+}
+
+.nf-repeater-table tbody tr:nth-child(even),
+table.nf-table tbody tr:nth-child(even) {
+    background-color: #fafafa;
+}
+
+/* Repeater controls */
+.nf-repeater-add-row,
+.nf-repeater-remove-row {
+    padding: 6px 12px;
+    font-size: 13px;
+    border-radius: 3px;
+    cursor: pointer;
+    border: none;
+}
+
+.nf-repeater-add-row {
+    background-color: #27ae60;
+    color: white;
+}
+
+.nf-repeater-remove-row {
+    background-color: #e74c3c;
+    color: white;
+}
+
+/* ===== ATTACHMENT CONTROL ===== */
+.nf-attachment-control,
+.nf-input-attachment {
+    border: 2px dashed #bdc3c7;
+    padding: 20px;
+    text-align: center;
+    border-radius: 4px;
+    background-color: #fafafa;
+    transition: all 0.3s ease;
+}
+
+.nf-attachment-control:hover,
+.nf-input-attachment:hover {
+    border-color: #667eea;
+    background-color: #f0f3ff;
+}
+
+.nf-attachment-list {
+    margin-top: 15px;
+    text-align: left;
+}
+
+.nf-attachment-item {
+    padding: 8px;
+    background-color: #ecf0f1;
+    margin-bottom: 5px;
+    border-radius: 3px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* ===== PANELS & SECTIONS ===== */
+.nf-panel,
+.nf-fieldset {
+    background: #ffffff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    border-left: 4px solid #667eea;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+
+.nf-panel-header,
+.nf-fieldset-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ecf0f1;
+}
+
+/* ===== CALCULATED VALUES ===== */
+.nf-calculated-value,
+.nf-calc-value {
+    background-color: #f0f3ff;
+    padding: 10px 12px;
+    border-radius: 4px;
+    font-weight: 600;
+    color: #2c3e50;
+    border: 1px solid #667eea;
+}
+
+/* ===== RICH TEXT EDITOR ===== */
+.nf-richhtmleditor iframe,
+.nf-input-richhtmleditor iframe {
+    width: 100%;
+    min-height: 200px;
+    border: 1px solid #dce4ec;
+    border-radius: 4px;
+}
+
+/* ===== HEADERS & LABELS ===== */
+.nf-html-control h1,
+.nf-form-title {
+    font-size: 28px;
+    color: #2c3e50;
+    border-bottom: 3px solid #667eea;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.nf-html-control h2 {
+    font-size: 22px;
+    color: #34495e;
+    margin-top: 25px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #ecf0f1;
+    padding-bottom: 8px;
+}
+
+.nf-html-control h3 {
+    font-size: 18px;
+    color: #34495e;
+    margin-top: 20px;
+    margin-bottom: 12px;
+}
+
+/* ===== HORIZONTAL LINE ===== */
+hr,
+.nf-html-control hr {
+    border: none;
+    border-top: 2px solid #ecf0f1;
+    margin: 30px 0;
+}
+
+/* ===== DISABLED FIELDS ===== */
+.theme-entry input:disabled,
+.theme-entry textarea:disabled,
+.theme-entry select:disabled,
+.nf-input:disabled {
+    background-color: #ecf0f1;
+    cursor: not-allowed;
+    opacity: 0.7;
+    color: #7f8c8d;
+}
+
+/* ===== READ-ONLY FIELDS ===== */
+.theme-entry input[readonly],
+.theme-entry textarea[readonly] {
+    background-color: #f9f9f9;
+    border-color: #e0e0e0;
+    cursor: default;
+}
+
+/* ===== PLACEHOLDER STYLING ===== */
+.theme-entry input::placeholder,
+.theme-entry textarea::placeholder {
+    color: #95a5a6;
+    font-style: italic;
+}
+
+/* ===== LOADING STATE ===== */
+.nf-loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.nf-loading-spinner {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #667eea;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 768px) {
+    .nf-form-cont {
+        padding: 20px 15px;
+        margin: 10px;
+    }
+    
+    .nf-form-header {
+        padding: 20px 20px;
+        margin: -20px -15px 20px -15px;
+    }
+    
+    .nf-form-header-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .nf-form-header-right {
+        text-align: center;
+    }
+    
+    .nf-form-header-title {
+        font-size: 24px;
+    }
+    
+    .nf-form-header-info {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
+    
+    .nf-form-footer {
+        padding: 20px 20px;
+        margin: 20px -15px -20px -15px;
+    }
+    
+    .nf-form-footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .nf-form-footer-right {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .nf-form-footer-divider {
+        display: none;
+    }
+    
+    .theme-entry {
+        margin-bottom: 15px;
+    }
+    
+    .nf-form-buttons button,
+    .nf-form-buttons input[type="submit"],
+    .nf-form-buttons input[type="button"] {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+    
+    .nf-repeater-table,
+    table.nf-table {
+        font-size: 13px;
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+}
+
+/* ===== PRINT STYLES ===== */
+@media print {
+    .nf-form-header {
+        background: #667eea !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+    
+    .nf-form-footer {
+        background: #34495e !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+    
+    .nf-form-buttons,
+    .nf-button-container {
+        display: none;
+    }
+    
+    .nf-form-cont {
+        box-shadow: none;
+        margin: 0;
+    }
+    
+    .theme-entry input,
+    .theme-entry textarea,
+    .theme-entry select {
+        border: 1px solid #333;
+        background: white;
+    }
+}
+
+/* ===== ACCESSIBILITY ===== */
+*:focus-visible {
+    outline: 2px solid #667eea;
+    outline-offset: 2px;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
