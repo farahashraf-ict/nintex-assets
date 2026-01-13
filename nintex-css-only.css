@@ -1,533 +1,215 @@
 /* =====================================================
-   NINTEX EXPENSE CLAIM FORM - FINAL OPTIMIZED CSS
-   Based on actual form structure
-   All styles scoped under .theme-entry
+   NINTEX EXPENSE CLAIM FORM
+   SIMPLE + GENERIC + SAFE
    ===================================================== */
 
-/* ===== CSS VARIABLES ===== */
 .theme-entry {
-    --primary-color: #667eea;
-    --primary-dark: #5568d3;
-    --secondary-color: #764ba2;
-    --success-color: #27ae60;
-    --error-color: #e74c3c;
-    --text-color: #2c3e50;
-    --text-light: #7f8c8d;
-    --border-color: #dce4ec;
-    --background-light: #f8f9fa;
-    --white: #ffffff;
-    --main-font: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
-    --border-radius: 4px;
-    --input-height: 38px;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    color: #2c3e50;
 }
 
-/* ===== FORM CONTAINER ===== */
+/* =======================
+   FORM CONTAINER
+   ======================= */
 .theme-entry .form {
-    font-family: var(--main-font) !important;
-    background-color: var(--white) !important;
-    padding: 0 !important;
-    margin: 0 !important;
+    background-color: #ffffff;
+    margin: 0;
+    padding: 0;
 }
 
-/* ===== PANEL/SECTION HEADERS ===== */
-.theme-entry .grid-header-wrapper,
-.theme-entry .panel-header-wrapper {
-    margin-bottom: 0 !important;
+/* =======================
+   SECTION / PANEL HEADERS
+   ======================= */
+.theme-entry .panel-header-text,
+.theme-entry .grid-header-text {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: #ffffff;
+    padding: 12px 16px;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.4;
 }
 
-.theme-entry .grid-header-wrapper .grid-header-text,
-.theme-entry .panel-header-wrapper .panel-header-text {
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%) !important;
-    padding: 14px 20px !important;
-    border-radius: 0 !important;
-    min-height: 50px !important;
-    height: auto !important;
-    line-height: 1.4 !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
+/* =======================
+   PANEL / GRID BODY
+   ======================= */
+.theme-entry .panel-body,
+.theme-entry .grid-body {
+    padding: 16px;
+    background-color: #ffffff;
 }
 
-.theme-entry .grid-header-wrapper .grid-header-text,
-.theme-entry .panel-header-wrapper .panel-header-text,
-.theme-entry .grid-header-wrapper .grid-header-text > span,
-.theme-entry .panel-header-wrapper .panel-header-text > span {
-    color: var(--white) !important;
-    font-size: 16px !important;
-    font-weight: 600 !important;
-    font-family: var(--main-font) !important;
-    white-space: normal !important;
-    overflow: visible !important;
-    text-overflow: clip !important;
-    line-height: 1.4 !important;
-    text-align: center !important;
-}
-
-/* Panel body - content area below headers */
-.theme-entry .grid-body,
-.theme-entry .panel-body {
-    padding: 20px !important;
-    background-color: var(--white) !important;
-}
-
-/* ===== LABELS ===== */
-.theme-entry label,
-.theme-entry label.input-label {
-    display: block !important;
-    font-weight: 600 !important;
-    color: var(--text-color) !important;
-    font-size: 13px !important;
-    margin-bottom: 6px !important;
-    margin-top: 0 !important;
-    font-family: var(--main-font) !important;
-    line-height: 1.4 !important;
-    padding: 0 !important;
+/* =======================
+   LABELS
+   ======================= */
+.theme-entry label {
+    font-weight: 600;
+    font-size: 13px;
+    margin-bottom: 4px;
+    display: inline-block;
 }
 
 /* Required field indicator */
-.theme-entry label.nf-required:after,
-.theme-entry .nf-associated-control.nf-required > label:after {
-    content: " *" !important;
-    color: var(--error-color) !important;
-    font-weight: bold !important;
+.theme-entry .nf-required > label::after {
+    content: " *";
+    color: #e74c3c;
+    font-weight: bold;
 }
 
-/* ===== FIELD CONTAINERS - FIX OVERLAPPING ===== */
-.theme-entry .nf-filler-control-wrapper,
-.theme-entry .nf-control-wrapper,
-.theme-entry div[class*="control-wrapper"] {
-    margin-bottom: 16px !important;
-    padding: 0 !important;
-    position: relative !important;
-    clear: both !important;
-}
-
-/* Row containers */
-.theme-entry .row,
-.theme-entry .nf-row {
-    display: block !important;
-    clear: both !important;
-    margin-bottom: 12px !important;
-}
-
-/* ===== TEXT INPUTS ===== */
+/* =======================
+   INPUTS (SAFE)
+   ======================= */
 .theme-entry input[type="text"],
-.theme-entry input[type="password"],
-.theme-entry input[type="email"],
-.theme-entry input[type="tel"],
-.theme-entry input[type="url"],
 .theme-entry input[type="number"],
-.theme-entry .SFC.SourceCode-Forms-Controls-Web-TextBox,
-.theme-entry .input-control {
-    width: 100% !important;
-    height: var(--input-height) !important;
-    padding: 8px 12px !important;
-    border: 1px solid var(--border-color) !important;
-    border-radius: var(--border-radius) !important;
-    font-size: 14px !important;
-    font-family: var(--main-font) !important;
-    color: var(--text-color) !important;
-    background-color: var(--white) !important;
-    transition: border-color 0.2s ease !important;
-    box-sizing: border-box !important;
-    line-height: normal !important;
-    margin: 0 !important;
-    display: block !important;
+.theme-entry input[type="email"],
+.theme-entry input[type="date"],
+.theme-entry textarea,
+.theme-entry select {
+    width: 100%;
+    padding: 6px 10px;
+    font-size: 13px;
+    border: 1px solid #dcdcdc;
+    border-radius: 4px;
+    background-color: #ffffff;
 }
 
-/* Watermark/placeholder */
-.theme-entry .SFC.SourceCode-Forms-Controls-Web-TextBox.watermark,
-.theme-entry .input-control-watermark {
-    height: var(--input-height) !important;
-    padding: 8px 12px !important;
-    color: var(--text-light) !important;
+/* Focus */
+.theme-entry input:focus,
+.theme-entry textarea:focus,
+.theme-entry select:focus {
+    outline: none;
+    border-color: #667eea;
 }
 
-/* Focus state */
-.theme-entry input[type="text"]:focus,
-.theme-entry input[type="password"]:focus,
-.theme-entry input[type="email"]:focus,
-.theme-entry input[type="tel"]:focus,
-.theme-entry input[type="url"]:focus,
-.theme-entry input[type="number"]:focus,
-.theme-entry .input-control:focus {
-    outline: none !important;
-    border-color: var(--primary-color) !important;
-    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1) !important;
+/* =======================
+   READ ONLY / DISPLAY
+   ======================= */
+.theme-entry .static-text,
+.theme-entry .display-only {
+    padding: 6px 10px;
+    background-color: #f5f6fa;
+    border: 1px solid #dcdcdc;
+    border-radius: 4px;
+    font-size: 13px;
 }
 
-/* ===== TEXTAREA ===== */
-.theme-entry textarea {
-    width: 100% !important;
-    min-height: 80px !important;
-    height: auto !important;
-    padding: 8px 12px !important;
-    border: 1px solid var(--border-color) !important;
-    border-radius: var(--border-radius) !important;
-    font-size: 14px !important;
-    font-family: var(--main-font) !important;
-    color: var(--text-color) !important;
-    background-color: var(--white) !important;
-    resize: vertical !important;
-    line-height: 1.5 !important;
-    box-sizing: border-box !important;
-    display: block !important;
-    margin: 0 !important;
-}
-
-.theme-entry textarea:focus {
-    outline: none !important;
-    border-color: var(--primary-color) !important;
-    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1) !important;
-}
-
-/* ===== SELECT DROPDOWNS ===== */
-.theme-entry select,
-.theme-entry .input-control.select-box,
-.theme-entry div.input-control.select-box {
-    height: var(--input-height) !important;
-    padding: 8px 12px !important;
-    border: 1px solid var(--border-color) !important;
-    border-radius: var(--border-radius) !important;
-    font-size: 14px !important;
-    font-family: var(--main-font) !important;
-    color: var(--text-color) !important;
-    background-color: var(--white) !important;
-    cursor: pointer !important;
-    box-sizing: border-box !important;
-    display: block !important;
-    margin: 0 !important;
-}
-
-.theme-entry .input-control.select-box .input-control-m-c {
-    height: var(--input-height) !important;
-    border: none !important;
-    padding: 8px 12px !important;
-    line-height: 22px !important;
-}
-
-.theme-entry .input-control.select-box .input-control-buttons {
-    border-style: none !important;
-    height: var(--input-height) !important;
-}
-
-/* Remove internal borders */
-html[dir=ltr] .theme-entry .input-control.select-box .input-control-m-c {
-    border-left-width: 0 !important;
-    border-right-width: 0 !important;
-    border-top-width: 0 !important;
-    border-bottom-width: 0 !important;
-}
-
-/* ===== DATE PICKER ===== */
-.theme-entry div.input-control.datepicker {
-    height: var(--input-height) !important;
-    border: 1px solid var(--border-color) !important;
-    border-radius: var(--border-radius) !important;
-    box-sizing: border-box !important;
-    background-color: var(--white) !important;
-    display: block !important;
-    margin: 0 !important;
-}
-
-.theme-entry div.input-control.datepicker input {
-    height: var(--input-height) !important;
-    padding: 8px 12px !important;
-    border: none !important;
-}
-
-.theme-entry div.input-control.datepicker:focus-within {
-    border-color: var(--primary-color) !important;
-    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1) !important;
-}
-
-/* ===== CHECKBOXES & RADIO ===== */
-.theme-entry input[type="checkbox"],
-.theme-entry input[type="radio"] {
-    width: 16px !important;
-    height: 16px !important;
-    margin-right: 6px !important;
-    cursor: pointer !important;
-    vertical-align: middle !important;
-}
-
-/* ===== BUTTONS ===== */
+/* =======================
+   BUTTONS
+   ======================= */
 .theme-entry button,
-.theme-entry input[type="submit"],
-.theme-entry input[type="button"] {
-    height: auto !important;
-    padding: 10px 24px !important;
-    border: none !important;
-    border-radius: var(--border-radius) !important;
-    font-size: 14px !important;
-    font-weight: 600 !important;
-    cursor: pointer !important;
-    transition: all 0.2s ease !important;
-    margin-right: 8px !important;
-    margin-top: 4px !important;
-    line-height: normal !important;
-    display: inline-block !important;
-}
-
-/* Primary button (Submit) */
-.theme-entry button[type="submit"],
+.theme-entry input[type="button"],
 .theme-entry input[type="submit"] {
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%) !important;
-    color: var(--white) !important;
+    padding: 8px 18px;
+    font-size: 13px;
+    font-weight: 600;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
 }
 
-.theme-entry button[type="submit"]:hover,
-.theme-entry input[type="submit"]:hover {
-    background: linear-gradient(135deg, var(--primary-dark) 0%, #6a3f8f 100%) !important;
-    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3) !important;
-    transform: translateY(-1px) !important;
+/* Primary */
+.theme-entry input[type="submit"],
+.theme-entry button[type="submit"] {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: #ffffff;
 }
 
-/* Secondary button (Cancel) */
-.theme-entry button[type="button"],
-.theme-entry input[type="button"] {
-    background-color: #95a5a6 !important;
-    color: var(--white) !important;
+/* Secondary */
+.theme-entry input[type="button"],
+.theme-entry button[type="button"] {
+    background-color: #95a5a6;
+    color: #ffffff;
 }
 
-.theme-entry button[type="button"]:hover {
-    background-color: #7f8c8d !important;
+/* =======================
+   FORM BUTTON BAR
+   ======================= */
+.theme-entry .form-buttons,
+.theme-entry .nf-form-buttons {
+    padding: 16px;
+    text-align: center;
+    border-top: 1px solid #e0e0e0;
+    background-color: #f8f9fa;
 }
 
-/* Button container at bottom */
-.theme-entry .nf-form-buttons,
-.theme-entry .form-buttons {
-    padding: 20px !important;
-    text-align: center !important;
-    border-top: 1px solid var(--border-color) !important;
-    background-color: var(--background-light) !important;
-    margin-top: 20px !important;
-}
-
-/* ===== REPEATING SECTION / LIST VIEW ===== */
-.theme-entry .nf-repeater,
-.theme-entry .list-view-container {
-    margin: 20px 0 !important;
-}
-
-/* Repeater table */
+/* =======================
+   GRID / LIST VIEW
+   ======================= */
 .theme-entry table {
-    width: 100% !important;
-    border-collapse: collapse !important;
-    margin: 0 !important;
-    background-color: var(--white) !important;
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #ffffff;
 }
 
 .theme-entry table th {
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%) !important;
-    color: var(--white) !important;
-    padding: 12px 10px !important;
-    text-align: left !important;
-    font-weight: 600 !important;
-    font-size: 13px !important;
-    line-height: 1.4 !important;
-    white-space: nowrap !important;
-    border: 1px solid rgba(255,255,255,0.2) !important;
+    background-color: #f1f3f6;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 8px;
+    border: 1px solid #e0e0e0;
+    text-align: left;
 }
 
 .theme-entry table td {
-    padding: 8px 10px !important;
-    border: 1px solid var(--border-color) !important;
-    font-size: 13px !important;
-    vertical-align: middle !important;
-    background-color: var(--white) !important;
+    padding: 6px 8px;
+    border: 1px solid #e0e0e0;
+    font-size: 13px;
+    vertical-align: middle;
 }
 
-.theme-entry table tbody tr:hover {
-    background-color: rgba(102, 126, 234, 0.05) !important;
-}
-
-.theme-entry table tbody tr:nth-child(even) {
-    background-color: var(--background-light) !important;
-}
-
-/* Table inputs - smaller */
-.theme-entry table input[type="text"],
-.theme-entry table input[type="number"],
+/* Grid inputs */
+.theme-entry table input,
 .theme-entry table select {
-    height: 32px !important;
-    padding: 4px 8px !important;
-    font-size: 13px !important;
-    width: 100% !important;
+    width: 100%;
+    padding: 4px 6px;
+    font-size: 13px;
 }
 
-/* Table date picker */
-.theme-entry table .input-control.datepicker {
-    height: 32px !important;
+/* Hover row */
+.theme-entry table tbody tr:hover {
+    background-color: #f5f7ff;
 }
 
-/* Repeater buttons (Add, Edit, Delete) */
-.theme-entry .list-view-toolbar button,
-.theme-entry .repeater-toolbar button {
-    height: auto !important;
-    padding: 6px 12px !important;
-    font-size: 13px !important;
-    margin: 4px !important;
-}
-
-/* Add button */
-.theme-entry button[title*="Add"],
-.theme-entry a[title*="Add"] {
-    background-color: var(--success-color) !important;
-    color: var(--white) !important;
-}
-
-/* Delete button */
-.theme-entry button[title*="Delete"],
-.theme-entry a[title*="Delete"] {
-    background-color: var(--error-color) !important;
-    color: var(--white) !important;
-}
-
-/* Edit button */
-.theme-entry button[title*="Edit"],
-.theme-entry a[title*="Edit"] {
-    background-color: #3498db !important;
-    color: var(--white) !important;
-}
-
-/* ===== FILTER/SEARCH SECTION ===== */
-.theme-entry .list-view-filters,
-.theme-entry .filter-section {
-    padding: 12px !important;
-    background-color: var(--background-light) !important;
-    border-bottom: 1px solid var(--border-color) !important;
-    margin-bottom: 0 !important;
-}
-
-/* ===== SUM ROW ===== */
-.theme-entry .sum-row,
-.theme-entry tr[class*="sum"],
-.theme-entry tr[class*="total"] {
-    background-color: var(--background-light) !important;
-    font-weight: 600 !important;
-    border-top: 2px solid var(--primary-color) !important;
-}
-
-/* ===== TEXT ELEMENTS ===== */
-.theme-entry div,
-.theme-entry span,
-.theme-entry p {
-    color: var(--text-color) !important;
-    font-family: var(--main-font) !important;
-    font-size: 13px !important;
-    line-height: 1.5 !important;
-}
-
-/* Static text fields (like Employee Name value) */
-.theme-entry .static-text,
-.theme-entry .display-only {
-    padding: 8px 12px !important;
-    background-color: var(--background-light) !important;
-    border: 1px solid var(--border-color) !important;
-    border-radius: var(--border-radius) !important;
-    min-height: var(--input-height) !important;
-    display: flex !important;
-    align-items: center !important;
-}
-
-/* ===== VALIDATION ===== */
+/* =======================
+   VALIDATION
+   ======================= */
 .theme-entry .nf-error input,
 .theme-entry .nf-error textarea,
 .theme-entry .nf-error select {
-    border-color: var(--error-color) !important;
-    background-color: #fff5f5 !important;
+    border-color: #e74c3c;
 }
 
 .theme-entry .nf-error-msg {
-    color: var(--error-color) !important;
-    font-size: 12px !important;
-    margin-top: 4px !important;
+    font-size: 12px;
+    color: #e74c3c;
+    margin-top: 4px;
 }
 
-/* ===== DISABLED/READONLY ===== */
-.theme-entry input:disabled,
-.theme-entry textarea:disabled,
-.theme-entry select:disabled {
-    background-color: #f0f0f0 !important;
-    cursor: not-allowed !important;
-    opacity: 0.7 !important;
-}
-
-.theme-entry input[readonly],
-.theme-entry textarea[readonly] {
-    background-color: var(--background-light) !important;
-    cursor: default !important;
-}
-
-/* ===== HYPERLINKS ===== */
+/* =======================
+   LINKS
+   ======================= */
 .theme-entry a {
-    color: var(--primary-color) !important;
-    text-decoration: none !important;
+    color: #667eea;
+    text-decoration: none;
 }
 
 .theme-entry a:hover {
-    color: var(--primary-dark) !important;
-    text-decoration: underline !important;
+    text-decoration: underline;
 }
 
-/* ===== RESPONSIVE ===== */
-@media screen and (max-width: 768px) {
-    .theme-entry .grid-body,
-    .theme-entry .panel-body {
-        padding: 15px !important;
+/* =======================
+   RESPONSIVE
+   ======================= */
+@media (max-width: 768px) {
+    .theme-entry .panel-body,
+    .theme-entry .grid-body {
+        padding: 12px;
     }
 
     .theme-entry button,
-    .theme-entry input[type="submit"],
-    .theme-entry input[type="button"] {
-        width: 100% !important;
-        margin-bottom: 8px !important;
+    .theme-entry input[type="button"],
+    .theme-entry input[type="submit"] {
+        width: 100%;
+        margin-bottom: 6px;
     }
-
-    .theme-entry table {
-        font-size: 12px !important;
-        display: block !important;
-        overflow-x: auto !important;
-    }
-}
-
-/* ===== PRINT ===== */
-@media print {
-    .theme-entry button,
-    .theme-entry input[type="submit"],
-    .theme-entry input[type="button"] {
-        display: none !important;
-    }
-}
-
-/* ===== ACCESSIBILITY ===== */
-.theme-entry *:focus-visible {
-    outline: 2px solid var(--primary-color) !important;
-    outline-offset: 1px !important;
-}
-
-/* ===== MISC FIXES ===== */
-.theme-entry .drop-menu .drop-menu-m {
-    border: 1px solid var(--border-color) !important;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
-}
-
-/* Ensure consistent box-sizing */
-.theme-entry * {
-    box-sizing: border-box !important;
-}
-
-/* Clear floats */
-.theme-entry::after,
-.theme-entry .row::after,
-.theme-entry .nf-row::after {
-    content: "" !important;
-    display: table !important;
-    clear: both !important;
-}
-
-/* Fix any absolute positioning issues */
-.theme-entry .nf-control-wrapper {
-    position: relative !important;
 }
