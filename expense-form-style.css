@@ -1,62 +1,119 @@
-/* Nintex Expense Claim Form - Custom Styling */
+/* Nintex Expense Claim Form - Modern Custom Styling */
 /* All styles scoped to .theme-entry */
 
+/* Import modern fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap');
+
 /* ============================================
-   HEADER SECTION
+   ROOT VARIABLES - Color Palette
+   ============================================ */
+.theme-entry {
+    --color-primary: #13005A;        /* Deep Purple - Primary actions, headers */
+    --color-secondary: #00337C;      /* Navy Blue - Secondary elements */
+    --color-accent: #1C82AD;         /* Teal Blue - Accents, hover states */
+    --color-success: #03C988;        /* Green - Success messages, highlights */
+    --color-error: #e74c3c;          /* Red - Error states */
+    --color-warning: #f39c12;        /* Orange - Warning states */
+    
+    /* Neutral colors */
+    --color-text: #2c3e50;
+    --color-text-light: #6c757d;
+    --color-bg: #ffffff;
+    --color-bg-light: #f8f9fa;
+    --color-border: #e1e8ed;
+    
+    /* Shadows */
+    --shadow-sm: 0 2px 4px rgba(19, 0, 90, 0.08);
+    --shadow-md: 0 4px 12px rgba(19, 0, 90, 0.12);
+    --shadow-lg: 0 8px 24px rgba(19, 0, 90, 0.15);
+    --shadow-xl: 0 12px 40px rgba(19, 0, 90, 0.18);
+    
+    /* Typography */
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--color-text);
+}
+
+/* ============================================
+   HEADER SECTION - Deep Purple Gradient
    ============================================ */
 .theme-entry .form-header {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
     color: white;
-    padding: 30px 40px;
-    border-radius: 8px 8px 0 0;
-    margin-bottom: 30px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 50px 40px;
+    border-radius: 16px 16px 0 0;
+    margin-bottom: 0;
+    box-shadow: var(--shadow-lg);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Decorative element */
+.theme-entry .form-header::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 300px;
+    height: 300px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 50%;
+    pointer-events: none;
 }
 
 .theme-entry .form-header h1 {
-    margin: 0 0 10px 0;
-    font-size: 28px;
-    font-weight: 600;
-    letter-spacing: 0.5px;
+    margin: 0 0 15px 0;
+    font-size: 36px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    font-family: 'Poppins', sans-serif;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
 .theme-entry .form-header p {
     margin: 0;
-    font-size: 14px;
+    font-size: 16px;
     opacity: 0.95;
-    line-height: 1.5;
+    line-height: 1.6;
+    max-width: 700px;
+    margin: 0 auto;
+    font-weight: 400;
 }
 
 /* ============================================
    FORM CONTAINER
    ============================================ */
 .theme-entry .form-container {
-    background: #ffffff;
-    padding: 40px;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    background: var(--color-bg);
+    padding: 50px;
+    border-radius: 0 0 16px 16px;
+    box-shadow: var(--shadow-lg);
     max-width: 1200px;
     margin: 0 auto;
 }
 
 /* ============================================
-   LABELS
+   LABELS - Larger, Bold
    ============================================ */
 .theme-entry label {
     display: block;
     font-weight: 600;
-    color: #333;
-    margin-bottom: 8px;
-    font-size: 14px;
+    color: var(--color-text);
+    margin-bottom: 10px;
+    font-size: 15px;
+    letter-spacing: 0.2px;
 }
 
 .theme-entry label.required::after {
     content: " *";
-    color: #e74c3c;
+    color: var(--color-error);
+    font-weight: 700;
 }
 
 /* ============================================
-   TEXT INPUTS & TEXTAREAS
+   MODERN ROUNDED INPUTS WITH SHADOWS
    ============================================ */
 .theme-entry input[type="text"],
 .theme-entry input[type="email"],
@@ -65,14 +122,27 @@
 .theme-entry textarea,
 .theme-entry select {
     width: 100%;
-    padding: 12px 15px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 14px;
+    padding: 14px 20px;
+    border: 2px solid var(--color-border);
+    border-radius: 12px;
+    font-size: 15px;
     font-family: inherit;
-    transition: all 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     box-sizing: border-box;
-    background-color: #fff;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    box-shadow: var(--shadow-sm);
+    font-weight: 400;
+}
+
+.theme-entry input[type="text"]:hover,
+.theme-entry input[type="email"]:hover,
+.theme-entry input[type="number"]:hover,
+.theme-entry input[type="tel"]:hover,
+.theme-entry textarea:hover,
+.theme-entry select:hover {
+    border-color: var(--color-accent);
+    box-shadow: var(--shadow-md);
 }
 
 .theme-entry input[type="text"]:focus,
@@ -82,57 +152,78 @@
 .theme-entry textarea:focus,
 .theme-entry select:focus {
     outline: none;
-    border-color: #667eea;
-    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 4px rgba(28, 130, 173, 0.15), var(--shadow-md);
+    transform: translateY(-2px);
 }
 
 .theme-entry textarea {
-    min-height: 100px;
+    min-height: 120px;
     resize: vertical;
+    line-height: 1.6;
+}
+
+/* Placeholder styling */
+.theme-entry input::placeholder,
+.theme-entry textarea::placeholder {
+    color: #a0aec0;
+    opacity: 1;
+    font-weight: 400;
 }
 
 /* ============================================
-   DATE PICKERS
+   DATE PICKERS - Same Rounded Style
    ============================================ */
 .theme-entry input[type="date"],
 .theme-entry .date-picker input {
     width: 100%;
-    padding: 12px 15px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 14px;
-    transition: all 0.3s ease;
+    padding: 14px 20px;
+    border: 2px solid var(--color-border);
+    border-radius: 12px;
+    font-size: 15px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     box-sizing: border-box;
-    background-color: #fff;
+    background-color: var(--color-bg);
+    box-shadow: var(--shadow-sm);
+    font-family: inherit;
+}
+
+.theme-entry input[type="date"]:hover,
+.theme-entry .date-picker input:hover {
+    border-color: var(--color-accent);
+    box-shadow: var(--shadow-md);
 }
 
 .theme-entry input[type="date"]:focus,
 .theme-entry .date-picker input:focus {
     outline: none;
-    border-color: #667eea;
-    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 4px rgba(28, 130, 173, 0.15), var(--shadow-md);
+    transform: translateY(-2px);
 }
 
 /* ============================================
-   SELECT DROPDOWNS
+   SELECT DROPDOWNS - Modern Arrow
    ============================================ */
 .theme-entry select {
     appearance: none;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23333' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Cpath fill='%231C82AD' d='M8 11L3 6h10z'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
-    background-position: right 15px center;
-    padding-right: 40px;
+    background-position: right 18px center;
+    padding-right: 50px;
+    cursor: pointer;
 }
 
 /* ============================================
-   CHECKBOXES & RADIO BUTTONS
+   CHECKBOXES & RADIO BUTTONS - Teal Accent
    ============================================ */
 .theme-entry input[type="checkbox"],
 .theme-entry input[type="radio"] {
-    margin-right: 8px;
-    width: 18px;
-    height: 18px;
+    margin-right: 10px;
+    width: 20px;
+    height: 20px;
     cursor: pointer;
+    accent-color: var(--color-accent);
 }
 
 .theme-entry .checkbox-label,
@@ -140,170 +231,428 @@
     display: inline-flex;
     align-items: center;
     font-weight: 400;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
     cursor: pointer;
+    padding: 8px 0;
+    transition: color 0.2s ease;
+}
+
+.theme-entry .checkbox-label:hover,
+.theme-entry .radio-label:hover {
+    color: var(--color-accent);
 }
 
 /* ============================================
-   GRID / TABLE STYLING
+   MODERN TABLE/GRID WITH SHADOWS
    ============================================ */
 .theme-entry table,
 .theme-entry .grid-table {
     width: 100%;
-    border-collapse: collapse;
+    border-collapse: separate;
+    border-spacing: 0;
     margin: 20px 0;
-    background: #fff;
-    border-radius: 4px;
+    background: var(--color-bg);
+    border-radius: 12px;
     overflow: hidden;
+    box-shadow: var(--shadow-md);
+    border: 2px solid var(--color-border);
 }
 
 .theme-entry table th,
 .theme-entry .grid-table th {
-    background: #f8f9fa;
-    padding: 12px 15px;
+    background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-accent) 100%);
+    padding: 16px 20px;
     text-align: left;
     font-weight: 600;
-    color: #333;
-    border-bottom: 2px solid #dee2e6;
+    color: white;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border: none;
 }
 
 .theme-entry table td,
 .theme-entry .grid-table td {
-    padding: 12px 15px;
-    border-bottom: 1px solid #dee2e6;
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--color-border);
+    font-size: 15px;
 }
 
-.theme-entry table tr:hover,
-.theme-entry .grid-table tr:hover {
-    background-color: #f8f9fa;
+.theme-entry table tbody tr,
+.theme-entry .grid-table tbody tr {
+    transition: all 0.2s ease;
+}
+
+.theme-entry table tbody tr:hover,
+.theme-entry .grid-table tbody tr:hover {
+    background-color: rgba(28, 130, 173, 0.05);
+    transform: scale(1.01);
+}
+
+.theme-entry table tbody tr:last-child td,
+.theme-entry .grid-table tbody tr:last-child td {
+    border-bottom: none;
 }
 
 .theme-entry table input,
-.theme-entry .grid-table input {
+.theme-entry .grid-table input,
+.theme-entry table select,
+.theme-entry .grid-table select {
     margin: 0;
+    font-size: 14px;
+    padding: 10px 14px;
+}
+
+/* Total row styling */
+.theme-entry table .total-amount,
+.theme-entry .grid-table .total-amount {
+    font-weight: 700;
+    color: var(--color-success);
+    font-size: 18px;
 }
 
 /* ============================================
-   BUTTONS
+   MODERN BUTTONS WITH GRADIENTS
    ============================================ */
 .theme-entry button,
 .theme-entry input[type="button"],
 .theme-entry input[type="submit"] {
-    padding: 12px 24px;
-    background: #667eea;
+    padding: 14px 32px;
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
     color: white;
     border: none;
-    border-radius: 4px;
-    font-size: 14px;
+    border-radius: 12px;
+    font-size: 16px;
     font-weight: 600;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: var(--shadow-md);
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 0.3px;
 }
 
 .theme-entry button:hover,
 .theme-entry input[type="button"]:hover,
 .theme-entry input[type="submit"]:hover {
-    background: #5568d3;
-    transform: translateY(-1px);
-    box-shadow: 0 4px 8px rgba(102, 126, 234, 0.3);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-xl);
 }
 
 .theme-entry button:active,
 .theme-entry input[type="button"]:active,
 .theme-entry input[type="submit"]:active {
-    transform: translateY(0);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
 }
 
 .theme-entry button.secondary {
-    background: #6c757d;
+    background: linear-gradient(135deg, #6c757d 0%, #5a6268 100%);
 }
 
 .theme-entry button.secondary:hover {
-    background: #5a6268;
+    background: linear-gradient(135deg, #5a6268 0%, #495057 100%);
 }
 
 /* ============================================
-   FORM SECTIONS
+   FORM SECTIONS - Color-coded
    ============================================ */
 .theme-entry .form-section {
-    margin-bottom: 30px;
-    padding: 25px;
-    background: #f8f9fa;
-    border-radius: 6px;
-    border-left: 4px solid #667eea;
+    margin-bottom: 35px;
+    padding: 30px;
+    background: rgba(248, 249, 250, 0.6);
+    border-radius: 16px;
+    border-left: 5px solid var(--color-accent);
+    box-shadow: var(--shadow-sm);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.theme-entry .form-section:hover {
+    box-shadow: var(--shadow-md);
+    border-left-color: var(--color-success);
 }
 
 .theme-entry .form-section-title {
-    font-size: 18px;
-    font-weight: 600;
-    color: #333;
-    margin-bottom: 20px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #dee2e6;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: 25px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--color-border);
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 0.3px;
 }
 
 .theme-entry .form-row {
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 
 .theme-entry .form-row-inline {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    margin-bottom: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-bottom: 25px;
 }
 
 /* ============================================
-   FOOTER SECTION
+   SUCCESS & ERROR MESSAGES - Color-coded
+   ============================================ */
+.theme-entry .success-message,
+.theme-entry .message-success,
+.theme-entry .status-success {
+    background: linear-gradient(135deg, rgba(3, 201, 136, 0.1) 0%, rgba(3, 201, 136, 0.05) 100%);
+    border-left: 5px solid var(--color-success);
+    color: #027a52;
+    padding: 18px 24px;
+    border-radius: 12px;
+    margin: 20px 0;
+    font-size: 15px;
+    font-weight: 500;
+    box-shadow: var(--shadow-md);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.theme-entry .success-message::before,
+.theme-entry .message-success::before,
+.theme-entry .status-success::before {
+    content: "✓";
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    background: var(--color-success);
+    color: white;
+    border-radius: 50%;
+    font-weight: 700;
+    font-size: 18px;
+    flex-shrink: 0;
+}
+
+.theme-entry .error-message,
+.theme-entry .message-error,
+.theme-entry .status-error {
+    background: linear-gradient(135deg, rgba(231, 76, 60, 0.1) 0%, rgba(231, 76, 60, 0.05) 100%);
+    border-left: 5px solid var(--color-error);
+    color: #c0392b;
+    padding: 18px 24px;
+    border-radius: 12px;
+    margin: 20px 0;
+    font-size: 15px;
+    font-weight: 500;
+    box-shadow: var(--shadow-md);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.theme-entry .error-message::before,
+.theme-entry .message-error::before,
+.theme-entry .status-error::before {
+    content: "✕";
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    background: var(--color-error);
+    color: white;
+    border-radius: 50%;
+    font-weight: 700;
+    font-size: 18px;
+    flex-shrink: 0;
+}
+
+.theme-entry .warning-message,
+.theme-entry .message-warning,
+.theme-entry .status-warning {
+    background: linear-gradient(135deg, rgba(243, 156, 18, 0.1) 0%, rgba(243, 156, 18, 0.05) 100%);
+    border-left: 5px solid var(--color-warning);
+    color: #d68910;
+    padding: 18px 24px;
+    border-radius: 12px;
+    margin: 20px 0;
+    font-size: 15px;
+    font-weight: 500;
+    box-shadow: var(--shadow-md);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.theme-entry .warning-message::before,
+.theme-entry .message-warning::before,
+.theme-entry .status-warning::before {
+    content: "⚠";
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    background: var(--color-warning);
+    color: white;
+    border-radius: 50%;
+    font-weight: 700;
+    font-size: 18px;
+    flex-shrink: 0;
+}
+
+.theme-entry .info-message,
+.theme-entry .message-info {
+    background: linear-gradient(135deg, rgba(28, 130, 173, 0.1) 0%, rgba(28, 130, 173, 0.05) 100%);
+    border-left: 5px solid var(--color-accent);
+    color: var(--color-secondary);
+    padding: 18px 24px;
+    border-radius: 12px;
+    margin: 20px 0;
+    font-size: 15px;
+    font-weight: 500;
+    box-shadow: var(--shadow-md);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.theme-entry .info-message::before,
+.theme-entry .message-info::before {
+    content: "i";
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    background: var(--color-accent);
+    color: white;
+    border-radius: 50%;
+    font-weight: 700;
+    font-size: 18px;
+    flex-shrink: 0;
+}
+
+/* ============================================
+   FOOTER SECTION - Teal Gradient
    ============================================ */
 .theme-entry .form-footer {
-    background: #f8f9fa;
-    padding: 20px 40px;
-    border-radius: 0 0 8px 8px;
-    margin-top: 30px;
-    border-top: 1px solid #dee2e6;
+    background: linear-gradient(135deg, rgba(28, 130, 173, 0.1) 0%, rgba(3, 201, 136, 0.1) 100%);
+    padding: 30px 40px;
+    border-radius: 0 0 16px 16px;
+    margin-top: 0;
+    border-top: 3px solid var(--color-accent);
     text-align: center;
+    box-shadow: var(--shadow-md);
 }
 
 .theme-entry .form-footer p {
-    margin: 0;
-    color: #6c757d;
-    font-size: 13px;
+    margin: 0 0 12px 0;
+    color: var(--color-text);
+    font-size: 14px;
+    font-weight: 500;
 }
 
 .theme-entry .form-footer .footer-links {
-    margin-top: 10px;
+    margin-top: 12px;
 }
 
 .theme-entry .form-footer a {
-    color: #667eea;
+    color: var(--color-accent);
     text-decoration: none;
-    margin: 0 10px;
-    font-size: 13px;
+    margin: 0 15px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.theme-entry .form-footer a::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--color-success);
+    transition: width 0.3s ease;
 }
 
 .theme-entry .form-footer a:hover {
-    text-decoration: underline;
+    color: var(--color-success);
+}
+
+.theme-entry .form-footer a:hover::after {
+    width: 100%;
 }
 
 /* ============================================
-   VALIDATION & ERROR STATES
+   VALIDATION STATES
    ============================================ */
-.theme-entry .error-message {
-    color: #e74c3c;
-    font-size: 12px;
-    margin-top: 5px;
-    display: none;
-}
-
 .theme-entry .field-error input,
 .theme-entry .field-error textarea,
 .theme-entry .field-error select {
-    border-color: #e74c3c;
+    border-color: var(--color-error);
+    background-color: rgba(231, 76, 60, 0.03);
 }
 
 .theme-entry .field-error .error-message {
     display: block;
+    color: var(--color-error);
+    font-size: 13px;
+    margin-top: 8px;
+    font-weight: 500;
+}
+
+.theme-entry .field-success input,
+.theme-entry .field-success textarea,
+.theme-entry .field-success select {
+    border-color: var(--color-success);
+    background-color: rgba(3, 201, 136, 0.03);
+}
+
+/* ============================================
+   LOADING SPINNER - Teal Color
+   ============================================ */
+.theme-entry .loading-spinner {
+    border: 4px solid rgba(28, 130, 173, 0.2);
+    border-top: 4px solid var(--color-accent);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin: 20px auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* ============================================
+   BADGES & PILLS
+   ============================================ */
+.theme-entry .badge,
+.theme-entry .pill {
+    display: inline-block;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+}
+
+.theme-entry .badge-primary {
+    background: var(--color-primary);
+    color: white;
+}
+
+.theme-entry .badge-success {
+    background: var(--color-success);
+    color: white;
+}
+
+.theme-entry .badge-accent {
+    background: var(--color-accent);
+    color: white;
 }
 
 /* ============================================
@@ -311,23 +660,83 @@
    ============================================ */
 @media (max-width: 768px) {
     .theme-entry .form-container {
-        padding: 20px;
+        padding: 30px 20px;
     }
     
     .theme-entry .form-header {
-        padding: 20px;
+        padding: 35px 20px;
+        border-radius: 12px 12px 0 0;
     }
     
     .theme-entry .form-header h1 {
-        font-size: 22px;
+        font-size: 28px;
+    }
+    
+    .theme-entry .form-header p {
+        font-size: 14px;
     }
     
     .theme-entry .form-row-inline {
         grid-template-columns: 1fr;
     }
     
+    .theme-entry .form-section {
+        padding: 20px;
+    }
+    
     .theme-entry table,
     .theme-entry .grid-table {
-        font-size: 12px;
+        font-size: 13px;
+    }
+    
+    .theme-entry table th,
+    .theme-entry .grid-table th,
+    .theme-entry table td,
+    .theme-entry .grid-table td {
+        padding: 12px 14px;
+    }
+    
+    .theme-entry button,
+    .theme-entry input[type="button"],
+    .theme-entry input[type="submit"] {
+        padding: 12px 24px;
+        font-size: 15px;
+        width: 100%;
+    }
+}
+
+/* ============================================
+   SMOOTH ANIMATIONS
+   ============================================ */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.theme-entry .form-section,
+.theme-entry .form-row {
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* ============================================
+   PRINT STYLES
+   ============================================ */
+@media print {
+    .theme-entry .form-header,
+    .theme-entry .form-footer,
+    .theme-entry button,
+    .theme-entry input[type="button"],
+    .theme-entry input[type="submit"] {
+        display: none;
+    }
+    
+    .theme-entry .form-container {
+        box-shadow: none;
     }
 }
