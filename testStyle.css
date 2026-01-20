@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+/* Root Reset */
+body,
+html,
+form,
+input,
+textarea,
+select,
+button {
+    font-family: 'Inter', sans-serif !important;
+    color: #1e1e2f !important;
+    box-sizing: border-box !important;
+}
+
+/* Base Background */
+body {
+    background-color: #f5f8fc !important;
+    margin: 0 !important;
+}
+
+/* Form Wrapper */
+form {
+    padding: 2rem !important;
+    background: #ffffff !important;
+    border-radius: 10px !important;
+    box-shadow: 0 4px 12px rgba(0, 63, 127, 0.08) !important;
+}
+
+/* Labels */
+label {
+    display: block !important;
+    font-size: 0.9rem !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    color: #003f7f !important;
+    margin: 1rem 0 0.5rem !important;
+}
+
+/* Inputs and Textareas */
+input[type="text"],
+input[type="password"],
+textarea,
+select {
+    width: 100% !important;
+    padding: 0.75em 1em !important;
+    border-radius: 6px !important;
+    border: 1px solid #ccd6e0 !important;
+    background-color: #ffffff !important;
+    font-size: 1rem !important;
+    margin-bottom: 1rem !important;
+    transition: border 0.3s ease-in-out !important;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    border-color: #ff6f3c !important;
+    outline: none !important;
+}
+
+/* Buttons */
+button {
+    background: linear-gradient(to right, #003f7f, #ff6f3c) !important;
+    color: #ffffff !important;
+    padding: 0.75em 2em !important;
+    font-weight: 600 !important;
+    font-size: 1rem !important;
+    border: none !important;
+    border-radius: 6px !important;
+    transition: background 0.3s ease !important;
+    margin-top: 1rem !important;
+}
+
+button:hover {
+    background: linear-gradient(to right, #002b5c, #e85428) !important;
+}
+
+/* Panels and Grids */
+.panel-header-wrapper .panel-header-text,
+.grid-header-wrapper .grid-header-text {
+    background-color: #003f7f !important;
+    color: #ffffff !important;
+    font-size: 1.1rem !important;
+    padding: 0.75rem 1.25rem !important;
+    text-align: center !important;
+    border-radius: 6px 6px 0 0 !important;
+}
+
+/* Tab Styles */
+.tab-box ul.tab-box-tabs li a.tab {
+    background-color: #f0f4fa !important;
+    color: #003f7f !important;
+    font-weight: 600 !important;
+    font-size: 0.95rem !important;
+    padding: 0.5em 1em !important;
+    border-bottom: 2px solid transparent !important;
+}
+
+.tab-box ul.tab-box-tabs a.tab.selected {
+    background-color: #fff5f0 !important;
+    border-bottom: 3px solid #ff6f3c !important;
+    color: #ff6f3c !important;
+}
+
+.tab-box ul.tab-box-tabs a.tab:hover {
+    background-color: #e6f0ff !important;
+}
+
+/* Watermarks */
+.input-control-watermark {
+    font-style: italic !important;
+    color: #999999 !important;
+}
+
+/* Responsive */
+@media screen and (max-width: 640px) {
+    form {
+        padding: 1rem !important;
+    }
+
+    input[type="text"],
+    textarea {
+        font-size: 0.95rem !important;
+    }
+
+    button {
+        width: 100% !important;
+        padding: 0.75em 0 !important;
+    }
+}
