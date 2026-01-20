@@ -57,50 +57,129 @@
     // }
 
 
+//     function addFormStructure() {
+//     var formContainer = document.querySelector('.theme-entry');
+    
+//     // Check if header already exists
+//     if (!formContainer.querySelector('.form-header')) {
+//         var header = document.createElement('div');
+//         header.className = 'form-header';
+        
+//         // Create a container for logo + title
+//         var headerTop = document.createElement('div');
+//         headerTop.style.display = 'flex';
+//         headerTop.style.alignItems = 'center';
+//         headerTop.style.marginBottom = '10px';
+        
+//         // Logo
+//         var logo = document.createElement('img');
+//         logo.src = 'https://farahashraf-ict.github.io/nintex-assets/finovate-logo.webp';
+//         logo.alt = 'Logo';
+//         logo.style.cssText = 'height: 60px; margin-right: 20px;';
+//         headerTop.appendChild(logo);
+        
+//         // Title
+//         var label = document.createElement('span');
+//         label.textContent = 'Expense Claim Form'; // Or pageTitle if defined
+//         label.style.cssText = `
+//             font-size: 24px;
+//             font-weight: 700;
+//             color: #ffffff;
+//             font-family: 'Inter', sans-serif;
+//         `;
+//         headerTop.appendChild(label);
+        
+//         // Add headerTop to header
+//         header.appendChild(headerTop);
+        
+//         // Add description paragraph
+//         var desc = document.createElement('p');
+//         desc.textContent = 'Please complete all required fields and submit your expense claim for approval. Ensure all receipts are attached and amounts are accurate.';
+//         header.appendChild(desc);
+        
+//         // Insert header at the top of formContainer
+//         formContainer.insertBefore(header, formContainer.firstChild);
+//     }
+    
+//     // Footer logic remains unchanged
+//     if (!formContainer.querySelector('.form-footer')) {
+//         var footer = document.createElement('div');
+//         footer.className = 'form-footer';
+//         footer.innerHTML = `
+//             <p>For questions or assistance, please contact the Finance Department</p>
+//             <div class="footer-links">
+//                 <a href="#">Expense Policy</a> | 
+//                 <a href="#">Help Center</a> | 
+//                 <a href="#">Contact Support</a>
+//             </div>
+//         `;
+//         formContainer.appendChild(footer);
+//     }
+// }
+
+
+
     function addFormStructure() {
     var formContainer = document.querySelector('.theme-entry');
-    
+
     // Check if header already exists
     if (!formContainer.querySelector('.form-header')) {
         var header = document.createElement('div');
         header.className = 'form-header';
-        
-        // Create a container for logo + title
-        var headerTop = document.createElement('div');
-        headerTop.style.display = 'flex';
-        headerTop.style.alignItems = 'center';
-        headerTop.style.marginBottom = '10px';
-        
-        // Logo
+        header.style.position = 'relative'; // needed for absolute positioning of logo
+        header.style.backgroundColor = '#1a73e8'; // header background color
+        header.style.color = '#ffffff';
+        header.style.padding = '20px';
+        header.style.minHeight = '120px'; // adjust based on logo size
+        header.style.display = 'flex';
+        header.style.alignItems = 'center';
+        header.style.justifyContent = 'center'; // center text container horizontally
+
+        // Logo (fixed to the left)
         var logo = document.createElement('img');
         logo.src = 'https://farahashraf-ict.github.io/nintex-assets/finovate-logo.webp';
         logo.alt = 'Logo';
-        logo.style.cssText = 'height: 60px; margin-right: 20px;';
-        headerTop.appendChild(logo);
-        
+        logo.style.cssText = `
+            height: 100px;
+            width: auto;
+            position: absolute;
+            left: 20px;
+        `;
+        header.appendChild(logo);
+
+        // Text container (title + paragraph) centered
+        var textContainer = document.createElement('div');
+        textContainer.style.textAlign = 'center';
+
         // Title
         var label = document.createElement('span');
-        label.textContent = 'Expense Claim Form'; // Or pageTitle if defined
+        label.textContent = 'Expense Claim Form';
         label.style.cssText = `
-            font-size: 24px;
+            font-size: 28px;
             font-weight: 700;
-            color: #ffffff;
+            display: block;
             font-family: 'Inter', sans-serif;
+            margin-bottom: 5px;
         `;
-        headerTop.appendChild(label);
-        
-        // Add headerTop to header
-        header.appendChild(headerTop);
-        
-        // Add description paragraph
+        textContainer.appendChild(label);
+
+        // Paragraph
         var desc = document.createElement('p');
         desc.textContent = 'Please complete all required fields and submit your expense claim for approval. Ensure all receipts are attached and amounts are accurate.';
-        header.appendChild(desc);
-        
+        desc.style.cssText = `
+            margin: 0;
+            font-size: 16px;
+            font-family: 'Inter', sans-serif;
+        `;
+        textContainer.appendChild(desc);
+
+        // Add text container to header
+        header.appendChild(textContainer);
+
         // Insert header at the top of formContainer
         formContainer.insertBefore(header, formContainer.firstChild);
     }
-    
+
     // Footer logic remains unchanged
     if (!formContainer.querySelector('.form-footer')) {
         var footer = document.createElement('div');
@@ -116,6 +195,7 @@
         formContainer.appendChild(footer);
     }
 }
+
 
     
     // Simple field validation on blur
