@@ -14,6 +14,8 @@
         }
         
         console.log('Expense form initialized');
+
+        
         
         // Initialize all features
         addFormStructure();
@@ -24,35 +26,97 @@
     }
     
     // Add header and footer structure if not present
+    // function addFormStructure() {
+    //     var formContainer = document.querySelector('.theme-entry');
+        
+    //     // Check if header already exists
+    //     if (!formContainer.querySelector('.form-header')) {
+    //         var header = document.createElement('div');
+    //         header.className = 'form-header';
+    //         header.innerHTML = `
+    //             <h1>Expense Claim Form</h1>
+    //             <p>Please complete all required fields and submit your expense claim for approval. Ensure all receipts are attached and amounts are accurate.</p>
+    //         `;
+    //         formContainer.insertBefore(header, formContainer.firstChild);
+    //     }
+        
+    //     // Check if footer already exists
+    //     if (!formContainer.querySelector('.form-footer')) {
+    //         var footer = document.createElement('div');
+    //         footer.className = 'form-footer';
+    //         footer.innerHTML = `
+    //             <p>For questions or assistance, please contact the Finance Department</p>
+    //             <div class="footer-links">
+    //                 <a href="#">Expense Policy</a> | 
+    //                 <a href="#">Help Center</a> | 
+    //                 <a href="#">Contact Support</a>
+    //             </div>
+    //         `;
+    //         formContainer.appendChild(footer);
+    //     }
+    // }
+
+
     function addFormStructure() {
-        var formContainer = document.querySelector('.theme-entry');
+    var formContainer = document.querySelector('.theme-entry');
+    
+    // Check if header already exists
+    if (!formContainer.querySelector('.form-header')) {
+        var header = document.createElement('div');
+        header.className = 'form-header';
         
-        // Check if header already exists
-        if (!formContainer.querySelector('.form-header')) {
-            var header = document.createElement('div');
-            header.className = 'form-header';
-            header.innerHTML = `
-                <h1>Expense Claim Form</h1>
-                <p>Please complete all required fields and submit your expense claim for approval. Ensure all receipts are attached and amounts are accurate.</p>
-            `;
-            formContainer.insertBefore(header, formContainer.firstChild);
-        }
+        // Create a container for logo + title
+        var headerTop = document.createElement('div');
+        headerTop.style.display = 'flex';
+        headerTop.style.alignItems = 'center';
+        headerTop.style.marginBottom = '10px';
         
-        // Check if footer already exists
-        if (!formContainer.querySelector('.form-footer')) {
-            var footer = document.createElement('div');
-            footer.className = 'form-footer';
-            footer.innerHTML = `
-                <p>For questions or assistance, please contact the Finance Department</p>
-                <div class="footer-links">
-                    <a href="#">Expense Policy</a> | 
-                    <a href="#">Help Center</a> | 
-                    <a href="#">Contact Support</a>
-                </div>
-            `;
-            formContainer.appendChild(footer);
-        }
+        // Logo
+        var logo = document.createElement('img');
+        logo.src = 'https://farahashraf-ict.github.io/nintex-assets/finovate-logo.webp';
+        logo.alt = 'Logo';
+        logo.style.cssText = 'height: 60px; margin-right: 20px;';
+        headerTop.appendChild(logo);
+        
+        // Title
+        var label = document.createElement('span');
+        label.textContent = 'Expense Claim Form'; // Or pageTitle if defined
+        label.style.cssText = `
+            font-size: 24px;
+            font-weight: 700;
+            color: #ffffff;
+            font-family: 'Inter', sans-serif;
+        `;
+        headerTop.appendChild(label);
+        
+        // Add headerTop to header
+        header.appendChild(headerTop);
+        
+        // Add description paragraph
+        var desc = document.createElement('p');
+        desc.textContent = 'Please complete all required fields and submit your expense claim for approval. Ensure all receipts are attached and amounts are accurate.';
+        header.appendChild(desc);
+        
+        // Insert header at the top of formContainer
+        formContainer.insertBefore(header, formContainer.firstChild);
     }
+    
+    // Footer logic remains unchanged
+    if (!formContainer.querySelector('.form-footer')) {
+        var footer = document.createElement('div');
+        footer.className = 'form-footer';
+        footer.innerHTML = `
+            <p>For questions or assistance, please contact the Finance Department</p>
+            <div class="footer-links">
+                <a href="#">Expense Policy</a> | 
+                <a href="#">Help Center</a> | 
+                <a href="#">Contact Support</a>
+            </div>
+        `;
+        formContainer.appendChild(footer);
+    }
+}
+
     
     // Simple field validation on blur
     function setupFieldValidation() {
