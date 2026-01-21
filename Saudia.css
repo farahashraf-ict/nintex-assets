@@ -939,7 +939,8 @@ body.theme-entry,
 }
 footer#footer::before {
     content: '';
-    background: url('../img/background1.png');
+    /* background: url('../img/background1.png'); */
+	background: url('https://farahashraf-ict.github.io/nintex-assets/finovate-logo.webp');
     position: absolute;
     top: 0px;
     left: 0px;
