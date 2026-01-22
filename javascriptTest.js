@@ -15,6 +15,7 @@ function addFormStructure() {
         // Container for header content
         var headerContainer = document.createElement('div');
         headerContainer.style.cssText = `
+            background: #1b1b72;
             max-width: 1200px;
             margin: 0 auto;
             display: flex;
@@ -56,8 +57,9 @@ function addFormStructure() {
             var menuItem = document.createElement('a');
             menuItem.href = '#';
             menuItem.style.cssText = `
-                background: #00803E;
-                color: white;
+                background: #1b1b72;
+                // background: #00803E;
+                color: white !important;
                 padding: 12px 20px;
                 text-decoration: none;
                 font-size: 14px;
@@ -138,40 +140,40 @@ function addFormStructure() {
         heroBanner.className = 'hero-banner';
         heroBanner.style.cssText = `
             background: linear-gradient(135deg, rgba(0,128,62,0.9), rgba(0,100,50,0.9)),
-                        url('https://farahashraf-ict.github.io/nintex-assets/finovate-logo.webp') center/cover;
+                        url('https://farahashraf-ict.github.io/nintex-assets/businessman-using-calculator.jpg') center/cover;
             padding: 60px 20px;
             margin-bottom: 30px;
             position: relative;
             color: white;
         `;
         
-        var iconRow = document.createElement('div');
-        iconRow.style.cssText = `
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            margin-bottom: 40px;
-        `;
+        // var iconRow = document.createElement('div');
+        // iconRow.style.cssText = `
+        //     display: flex;
+        //     justify-content: center;
+        //     gap: 40px;
+        //     margin-bottom: 40px;
+        // `;
         
-        var icons = ['📞', '✉️', '@', '🖩'];
-        icons.forEach(function(icon) {
-            var iconCircle = document.createElement('div');
-            iconCircle.style.cssText = `
-                width: 80px;
-                height: 80px;
-                border-radius: 50%;
-                border: 3px solid rgba(255,255,255,0.5);
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                font-size: 32px;
-                background: rgba(255,255,255,0.1);
-            `;
-            iconCircle.textContent = icon;
-            iconRow.appendChild(iconCircle);
-        });
+        // var icons = ['📞', '✉️', '@', '🖩'];
+        // icons.forEach(function(icon) {
+        //     var iconCircle = document.createElement('div');
+        //     iconCircle.style.cssText = `
+        //         width: 80px;
+        //         height: 80px;
+        //         border-radius: 50%;
+        //         border: 3px solid rgba(255,255,255,0.5);
+        //         display: flex;
+        //         align-items: center;
+        //         justify-content: center;
+        //         font-size: 32px;
+        //         background: rgba(255,255,255,0.1);
+        //     `;
+        //     iconCircle.textContent = icon;
+        //     iconRow.appendChild(iconCircle);
+        // });
         
-        heroBanner.appendChild(iconRow);
+        // heroBanner.appendChild(iconRow);
         
         // Insert after header
         var header = formContainer.querySelector('.form-header');
@@ -270,4 +272,5 @@ if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', addFormStructure);
 } else {
     addFormStructure();
+
 }
